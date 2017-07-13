@@ -12,6 +12,8 @@ import GameplayKit
 class GameScene: SKScene {
     ////game scene comment #1
     private var label : SKLabelNode?
+    
+    ////Nick New Comment
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
