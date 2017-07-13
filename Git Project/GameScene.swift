@@ -13,9 +13,11 @@ class GameScene: SKScene {
     ////game scene comment #1
     // Tassos new comment
     private var label : SKLabelNode?
+
     
     ////Nick New Comment
     private var nickNode : SKShapeNode?
+
     
     override func didMove(to view: SKView) {
         
@@ -28,9 +30,11 @@ class GameScene: SKScene {
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
+
         self.nickNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
         if let spinnyNode = self.nickNode {
+
             spinnyNode.lineWidth = 2.5
             
             spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
@@ -43,6 +47,7 @@ class GameScene: SKScene {
     
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.nickNode?.copy() as! SKShapeNode? {
+
             n.position = pos
             n.strokeColor = SKColor.green
             self.addChild(n)
@@ -51,6 +56,7 @@ class GameScene: SKScene {
     
     func touchMoved(toPoint pos : CGPoint) {
         if let n = self.nickNode?.copy() as! SKShapeNode? {
+
             n.position = pos
             n.strokeColor = SKColor.blue
             self.addChild(n)
@@ -59,6 +65,7 @@ class GameScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         if let n = self.nickNode?.copy() as! SKShapeNode? {
+
             n.position = pos
             n.strokeColor = SKColor.red
             self.addChild(n)
